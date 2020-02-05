@@ -1,0 +1,15 @@
+service {
+ id = "livy"
+ name = "livy"
+ tags = [
+  "livy",
+  "blah"
+ ]
+ port = 8998
+ check = {
+  id = "livy-check"
+  name = "Health check for Livy"
+  http = "http://hopsworks0.logicalclocks.com:8998/sessions?from=0&size=1"
+  interval = "10s"
+ }
+}

@@ -1,4 +1,13 @@
 
+consul_service "adding service" do
+  service_definition "service_def.hcl.erb"
+  action :register
+end
+
+
+
+
+
 my_ip = my_private_ip()
 nn_endpoint = private_recipe_ip("hops", "nn") + ":#{node['hops']['nn']['port']}"
 home = node['hops']['hdfs']['user_home']
